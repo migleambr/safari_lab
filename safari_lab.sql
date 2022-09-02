@@ -7,7 +7,6 @@ CREATE TABLE enclosures (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     capacity INT,
-
     closedForMaintenance BOOLEAN
 );
 
@@ -31,7 +30,7 @@ INSERT INTO animals (name, type, age, enclosure_id) VALUES ('Tony', 'Tiger', 59,
 INSERT INTO animals (name, type, age, enclosure_id) VALUES ('Coco', 'Monkey', 24, 2 );
 INSERT INTO animals (name, type, age, enclosure_id) VALUES ('Quilky','Bunny', 4, 3);
 INSERT INTO animals (name, type, age, enclosure_id) VALUES ('Chip', 'Wolf', 12, 4);
-INSERT INTO animals (name, type, age, enclosure_id) VALUES ('Sam', 'Toucan' 13, 5);
+INSERT INTO animals (name, type, age, enclosure_id) VALUES ('Sam', 'Toucan', 13, 5);
 
 SELECT * FROM animals;
 
@@ -47,7 +46,7 @@ INSERT INTO staff (name, employeeNumber) VALUES ('Anna', 54321);
 
 CREATE TABLE assignments (
     id SERIAL PRIMARY KEY,
-    employeeId INT REFERENCES employees(id),
+    employeeId INT REFERENCES staff(id),
     enclosureId INT REFERENCES enclosures(id), 
     day VARCHAR(255)
 );
